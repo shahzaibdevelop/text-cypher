@@ -1,0 +1,188 @@
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #000;
+  color: #00ff00;
+  overflow-x: hidden;
+}
+
+/* App Container */
+.App {
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.App-header {
+  padding: 20px;
+  background: #000;
+  border-bottom: 1px solid #00ff00;
+}
+
+.App-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  overflow: visible;
+  white-space: nowrap;
+}
+
+/* Glitch Effect */
+.glitch {
+  position: relative;
+  color: #00ff00;
+}
+.glitch::before,
+.glitch::after {
+  content: "H4CK3R CYPH3R";
+  position: absolute;
+  left: 0;
+}
+.glitch::before {
+  animation: glitch 2s infinite linear alternate-reverse;
+  color: #ff00c1;
+  clip: rect(24px, 9999px, 90px, 0);
+}
+.glitch::after {
+  animation: glitch 2s infinite linear alternate-reverse;
+  color: #00fff9;
+  clip: rect(85px, 9999px, 140px, 0);
+}
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+/* Main Content */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Textareas */
+textarea {
+  background-color: #111;
+  border: 1px solid #00ff00;
+  color: #00ff00;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+  resize: both;
+  margin: 10px 0;
+}
+textarea:focus {
+  outline: none;
+  border: 1px solid #00ff00;
+}
+
+
+.wide-textarea {
+  width: 100%;
+  max-width: 1200px;  /* Increased maximum width */
+  min-height: 250px;
+}
+
+/* Mode Toggle Buttons */
+.mode-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.mode-toggle button {
+  background-color: transparent;
+  border: 2px solid #00ff00;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: #00ff00;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.mode-toggle button.active,
+.mode-toggle button:hover {
+  background-color: #00ff00;
+  color: #000;
+}
+
+/* Process Button */
+.process-button {
+  background-color: #00ff00;
+  color: #000;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  margin: 20px 0;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.process-button:hover {
+  background-color: #00cc00;
+}
+
+/* Terminal Pop-Up for Output */
+.terminal-popup {
+  background-color: #000;
+  border: 2px solid #00ff00;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #00ff00;
+  width: 100%;
+  max-width: 700px;  /* Increased maximum width */
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.terminal-text {
+  width: 100%;
+  height: 250px;
+  background-color: #000;
+  border: none;
+  color: #00ff00;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+  resize: none;
+}
+
+/* Copy Button */
+.copy-button {
+  background-color: #00ff00;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 10px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.copy-button:hover {
+  background-color: #00cc00;
+}
+
+/* Copy Success Message */
+.copy-success {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #00ff00;
+  color: #000;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 0.9rem;
+}
